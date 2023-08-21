@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	var a, b, h, luas int
+	var a, b, h, luas float32
 	fmt.Println("=====Luas Trapesium=====")
 	fmt.Print("Masukkan Alas Atas	: ")
 	fmt.Scan(&a)
