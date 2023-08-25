@@ -1,42 +1,18 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 type Car struct {
-	fuelType string
-	fuel     float64
+	carType string
+	fuelin  float64
 }
 
-func (car Car) distanceTraveled() string {
-	var distance float64
-
-	switch car.fuelType {
-	case "pertamax turbo":
-		distance = car.fuel / 3.3
-	case "pertamax":
-		distance = car.fuel / 2.2
-	case "pertalite":
-		distance = car.fuel / 1.5
-	default:
-		distance = 0
-	}
-
-	return fmt.Sprintf("%.2f Mil", distance)
+func (c Car) CalculateDistance() float64 {
+	return c.fuelin * 1.5
 }
 
 func main() {
-	car1 := Car{
-		fuelType: "pertamax turbo",
-		fuel:     5,
-	}
-
-	car2 := Car{
-		fuelType: "pertalite",
-		fuel:     10,
-	}
-
-	fmt.Println("Jarak tempuh", car1.fuelType, "dengan jumlah", car1.fuel, "L adalah", car1.distanceTraveled())
-	fmt.Println("Jarak tempuh", car2.fuelType, "dengan jumlah", car2.fuel, "L adalah", car2.distanceTraveled())
+	car := Car{"SUV", 10.5}
+	perkiraanPengeluaran := car.CalculateDistance()
+	fmt.Printf("car type: %s , est. distance: %.2f\n", car.carType, perkiraanPengeluaran)
 }
