@@ -6,7 +6,7 @@ SELECT name FROM users WHERE gender='L';
 SELECT * FROM products WHERE id=3;
 
 -- C
-SELECT * FROM users WHERE name LIKE '%a%' AND created_at BETWEEN '2023-09-11 10:00:00' AND '2023-09-18 10:36:00';
+SELECT * FROM users WHERE name LIKE '%a%' AND created_at BETWEEN '2023-09-11 10:00:00' AND '2023-09-18 10:35:00';
 
 -- D
 SELECT COUNT(gender) AS total_women FROM users WHERE gender='P';
