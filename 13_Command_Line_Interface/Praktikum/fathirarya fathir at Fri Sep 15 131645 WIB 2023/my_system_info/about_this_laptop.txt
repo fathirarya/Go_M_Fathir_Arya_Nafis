@@ -1,0 +1,2 @@
+My Username: fathirarya
+With host: Linux LAPTOP-KD2S1U9O 4.4.0-19041-Microsoft #2311-Microsoft Tue Nov 08 17:09:00 PST 2022 x86_64 x86_64 x86_64 GNU/Linux
