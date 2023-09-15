@@ -1,4 +1,4 @@
-folder_name="$1 fathir at $(date +'%a %b %d %T %Z %Y')"
+folder_name="$1 at $(date +'%a %b %d %T %Z %Y')"
 mkdir -p "$folder_name"
 
 # Membuat struktur folder dan file-file yang diperlukan
