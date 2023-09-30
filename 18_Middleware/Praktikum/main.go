@@ -16,6 +16,7 @@ func main() {
 		middleware.LoggerConfig{
 			Format: "method=${method}, uri=${uri}, status=${status}, time=${time_rfc3339}\n",
 		}))
+
 	routes.InitUserRoutes(e)
 	routes.InitBookRoutes(e)
 
