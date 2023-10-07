@@ -2,14 +2,14 @@ version: '3'
 
 services:
     webapp:
-        image: mvc-orm:1.0
+        image: mvc-orm:1.1
         depends_on:
             - database
 
     database:
         image: mysql:latest
         environment:
-            MYSQL_ROOT_PASSWORD: arya12345
-            MYSQL_DATABASE: middleware
+            MYSQL_ROOT_PASSWORD:
+            MYSQL_DATABASE: golang_rest_api
         ports:
             - '3306:3306'
