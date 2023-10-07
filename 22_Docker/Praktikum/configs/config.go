@@ -3,6 +3,7 @@ package configs
 import (
 	"Praktikum/models"
 	"fmt"
+	"os"
 
 	"github.com/joho/godotenv"
 	"gorm.io/driver/mysql"
@@ -10,14 +11,6 @@ import (
 )
 
 var DB *gorm.DB
-
-type Config struct {
-	DB_Username string
-	DB_Password string
-	DB_Port     string
-	DB_Host     string
-	DB_Name     string
-}
 
 func LoadEnv() {
 	err := godotenv.Load()
@@ -27,24 +20,15 @@ func LoadEnv() {
 }
 
 func InitDB() {
-	config := Config{
-		DB_Username: "fathir",
-		DB_Password: "ayam12345",
-		DB_Port:     "3306",
-		DB_Host:     "db4free.net",
-		DB_Name:     "middleware",
-	}
-
-	connectionString := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local",
-		config.DB_Username,
-		config.DB_Password,
-		config.DB_Host,
-		config.DB_Port,
-		config.DB_Name,
-	)
+	dsn := fmt.Sprintf("%v:%v@tcp(%v:%v)/%v?charset=utf8mb4&parseTime=True&loc=Local",
+		os.Getenv("DB_USERNAME"),
+		os.Getenv("DB_PASSWORD"),
+		os.Getenv("DB_HOST"),
+		os.Getenv("DB_PORT"),
+		os.Getenv("DB_NAME"))
 
 	var err error
-	DB, err = gorm.Open(mysql.Open(connectionString), &gorm.Config{})
+	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic(err)
 	}

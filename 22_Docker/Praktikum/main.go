@@ -20,5 +20,5 @@ func main() {
 	routes.InitUserRoutes(e)
 	routes.InitBookRoutes(e)
 
-	e.Logger.Fatal(e.Start(":8000"))
+	e.Logger.Fatal(e.Start(":8080"))
 }
